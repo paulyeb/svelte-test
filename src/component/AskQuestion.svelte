@@ -6,7 +6,7 @@
     const submitFormHandler = () => {
         console.log(question);
 
-        const completeQuestion = {
+        const allQuestionDetails = {
             question,
             is_reply: false,
             reply_to: 0,
@@ -14,7 +14,7 @@
             downvotes: 0,
         };
 
-        console.log(completeQuestion);
+        console.log(allQuestionDetails);
 
         fetch("http://192.168.4.111:4000/api/questions", {
             method: "POST",
