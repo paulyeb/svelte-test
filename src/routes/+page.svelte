@@ -1,8 +1,3 @@
-<!-- <div class="flex justify-center items-center h-full">
-    <img src="/interaction.jpg" alt="interaction" class="w-full" />
-    <div class="w-full">Welcome to Forum</div>
-</div> -->
-
 <div
     class="lg:container font-poppins h-full flex justify-between items-center mb-10"
 >
@@ -20,14 +15,6 @@
             ea, ipsa vero tempore maiores consectetur porro minima doloribus
             deleniti tempora!
         </p>
-        <!-- <Button class="mx-8"
-            >Contact Us Now<span class="mx-3"
-                ><FontAwesomeIcon
-                    icon={faPhoneFlip}
-                    style={{ height: "16px", width: "16px" }}
-                /></span
-            ></Button
-        > -->
     </div>
     <img
         src="/interaction.jpg"

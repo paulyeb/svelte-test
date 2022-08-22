@@ -1,57 +1,7 @@
 <script>
     import Button from "../lib/button.svelte";
     import Card from "../lib/card.svelte";
-    // import PollStore from "../stores/PollStore.js";
-    // import { createEventDispatcher } from "svelte";
 
-    // let dispatch = createEventDispatcher();
-
-    // let fields = {
-    //     question: "",
-    //     answerA: "",
-    //     answerB: "",
-    // };
-
-    // let errors = {
-    //     question: "",
-    //     answerA: "",
-    //     answerB: "",
-    // };
-
-    // let valid = false;
-
-    // const submitFormHandler = () => {
-    //     valid = true;
-
-    //validations
-    //     if (fields.question.trim().length < 5) {
-    //         valid = false;
-    //         errors.question = "This field must contain at least 5 characters";
-    //     } else {
-    //         errors.question = "";
-    //     }
-
-    //     if (fields.answerA.trim().length < 1) {
-    //         valid = false;
-    //         errors.answerA = "This field cannot be empty";
-    //     } else {
-    //         errors.answerA = "";
-    //     }
-
-    //     if (fields.answerB.trim().length < 1) {
-    //         valid = false;
-    //         errors.answerB = "This field cannot be empty";
-    //     } else {
-    //         errors.answerB = "";
-    //     }
-
-    //     if (valid) {
-    //         let poll = { ...fields, votesA: 0, votesB: 0, id: Math.random() };
-    //         console.log(fields);
-    //         PollStore.update((currentPolls) => [poll, ...currentPolls]);
-    //         dispatch("addPoll");
-    //     }
-    // }; -->
     let question = "";
     const submitFormHandler = () => {
         console.log(question);
@@ -59,7 +9,12 @@
         const completeQuestion = {
             question,
             is_reply: false,
+            reply_to: 0,
+            upvotes: 0,
+            downvotes: 0,
         };
+
+        console.log(completeQuestion);
 
         fetch("http://192.168.4.111:4000/api/questions", {
             method: "POST",
@@ -87,7 +42,6 @@
                     id="question"
                     bind:value={question}
                 />
-                <!-- <p class="error-message">{errors.question}</p> -->
             </div>
             <Button>Submit Question</Button>
         </form>
